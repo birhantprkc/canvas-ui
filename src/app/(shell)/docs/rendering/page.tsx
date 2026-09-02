@@ -72,22 +72,6 @@ The API is identical, so switching renderers is usually replacing the installed 
 
 The look, motion, props, option types, and public API are the same. WebGPU needs a modern browser and adds \`vgpu\`. Both builds ship for all six frameworks, because the wrappers are shared and only the engine file differs.
 
-## Why Canvas UI
-
-| | Canvas UI | Shader-module libraries |
-| --- | --- | --- |
-| Rendering | WebGL or WebGPU (via vgpu), your choice | Usually WebGPU via a renderer library |
-| Unit of reuse | A finished, interactive component wrapping live HTML | A shader module or reusable WGSL snippet |
-| Shader source | GLSL or WGSL inside the component, fully yours | Imported from npm or another package |
-| Customization | Typed props with live updates, or edit the source you own | Tune uniforms or edit an entry shader |
-| Types | TypeScript props for every option, plus vgpu's WGSL reflection in the WebGPU build | Depends on the library |
-| Frameworks | React, Vue, Svelte, Solid, Preact, vanilla, for both renderers | Often React and vanilla |
-| Live HTML | Wraps your real DOM: text stays selectable, links stay clickable | Draws pixels; your UI sits on top or underneath |
-| Fallbacks | Built in: degrades to plain HTML or a GPU overlay, never a blank page | Up to you |
-| Accessibility | Reduced-motion aware, pauses off-screen and in hidden tabs | Depends on the integration |
-| Install | shadcn CLI registry, MCP server, one-click copy for AI assistants | npm packages |
-| Dependencies | None for WebGL; vgpu for WebGPU | Renderer and shader packages |
-
 ## Next steps
 
 - Read the installation guide: https://canvasui.dev/docs/installation
@@ -239,84 +223,6 @@ export default async function RenderingPage() {
           ship for all six frameworks, because the wrappers are shared and only
           the engine file differs.
         </p>
-
-        <h2>Why Canvas UI</h2>
-        <table>
-          <thead>
-            <tr>
-              <th />
-              <th>Canvas UI</th>
-              <th>Shader-module libraries</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>Rendering</th>
-              <td>WebGL or WebGPU (via vgpu), your choice</td>
-              <td>Usually WebGPU via a renderer library</td>
-            </tr>
-            <tr>
-              <th>Unit of reuse</th>
-              <td>A finished, interactive component wrapping live HTML</td>
-              <td>A shader module or reusable WGSL snippet</td>
-            </tr>
-            <tr>
-              <th>Shader source</th>
-              <td>GLSL or WGSL inside the component, fully yours</td>
-              <td>Imported from npm or another package</td>
-            </tr>
-            <tr>
-              <th>Customization</th>
-              <td>Typed props with live updates, or edit the source you own</td>
-              <td>Tune uniforms or edit an entry shader</td>
-            </tr>
-            <tr>
-              <th>Types</th>
-              <td>
-                TypeScript props for every option, plus vgpu&apos;s WGSL
-                reflection in the WebGPU build
-              </td>
-              <td>Depends on the library</td>
-            </tr>
-            <tr>
-              <th>Frameworks</th>
-              <td>React, Vue, Svelte, Solid, Preact, vanilla, for both renderers</td>
-              <td>Often React and vanilla</td>
-            </tr>
-            <tr>
-              <th>Live HTML</th>
-              <td>
-                Wraps your real DOM: text stays selectable, links stay clickable
-              </td>
-              <td>Draws pixels; your UI sits on top or underneath</td>
-            </tr>
-            <tr>
-              <th>Fallbacks</th>
-              <td>
-                Built in: degrades to plain HTML or a GPU overlay, never a blank
-                page
-              </td>
-              <td>Up to you</td>
-            </tr>
-            <tr>
-              <th>Accessibility</th>
-              <td>Reduced-motion aware, pauses off-screen and in hidden tabs</td>
-              <td>Depends on the integration</td>
-            </tr>
-            <tr>
-              <th>Install</th>
-              <td>
-                shadcn CLI registry, MCP server, one-click copy for AI assistants
-              </td>
-              <td>npm packages</td>
-            </tr>
-            <tr>
-              <th>Dependencies</th>
-              <td>None for WebGL; vgpu for WebGPU</td>
-              <td>Renderer and shader packages</td>
-            </tr>
-          </tbody>
-        </table>
 
         <h2>Next steps</h2>
         <div className="mt-6">
