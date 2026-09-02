@@ -9,7 +9,7 @@ import {
   useDemoScrollbarGutter,
 } from "@/components/demos/demo-controls";
 import { useDemoControls } from "@/hooks/use-demo-controls";
-import { Liquid } from "@/lib/Liquid/Liquid";
+import { Liquid } from "@/components/docs/live/Liquid";
 
 const CONTROLS = {
   quality: radio("Quality", "medium", [

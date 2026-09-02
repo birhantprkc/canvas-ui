@@ -11,6 +11,7 @@ const ROUTES: { path: string; priority: number }[] = [
   { path: "/celebrate", priority: 0.7 },
   { path: "/docs", priority: 0.9 },
   { path: "/docs/installation", priority: 0.9 },
+  { path: "/docs/rendering", priority: 0.8 },
   { path: "/docs/mcp", priority: 0.7 },
   { path: "/docs/components/ascii-object", priority: 0.8 },
   { path: "/docs/components/ascii-sweep", priority: 0.8 },

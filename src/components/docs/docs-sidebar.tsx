@@ -53,6 +53,7 @@ const sections = [
     items: [
       { href: "/docs", label: "Introduction" },
       { href: "/docs/installation", label: "Installation" },
+      { href: "/docs/rendering", label: "Rendering" },
       { href: "/docs/mcp", label: "MCP" },
     ],
   },

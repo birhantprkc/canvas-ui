@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useCallback, type ReactNode } from "react";
 
 import { Reveal } from "@/components/landing/reveal";
-import { Bend } from "@/lib/Bend/Bend";
+import { Bend } from "@/components/docs/live/Bend";
 
 interface CommunityQuote {
   author: string;

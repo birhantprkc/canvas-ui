@@ -3,6 +3,7 @@
 import { Select as SelectPrimitive } from "@base-ui/react/select";
 import { ChevronDown } from "lucide-react";
 
+import { EFFECT_PORTAL_CONTAINER } from "@/components/common/effect-portal";
 import { cn } from "@/lib/utils";
 
 function Select<Value>(props: SelectPrimitive.Root.Props<Value>) {
@@ -41,7 +42,7 @@ function SelectContent({
 }: SelectPrimitive.Popup.Props &
   Pick<SelectPrimitive.Positioner.Props, "align">) {
   return (
-    <SelectPrimitive.Portal>
+    <SelectPrimitive.Portal container={EFFECT_PORTAL_CONTAINER}>
       <SelectPrimitive.Positioner
         className="z-40 outline-none"
         sideOffset={8}

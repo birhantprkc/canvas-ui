@@ -12,7 +12,7 @@ import {
 } from "@/components/demos/control-schema";
 import { ColorRow, DemoControls } from "@/components/demos/demo-controls";
 import { useDemoControls } from "@/hooks/use-demo-controls";
-import { InkObject } from "@/lib/InkObject/InkObject";
+import { InkObject } from "@/components/docs/live/InkObject";
 
 const DEFAULT_MODEL = "/assets/models/duck.glb";
 const DEFAULT_HIGHLIGHT = "#066aff";

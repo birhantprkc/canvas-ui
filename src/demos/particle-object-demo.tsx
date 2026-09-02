@@ -12,7 +12,7 @@ import {
 } from "@/components/demos/control-schema";
 import { ColorRow, DemoControls } from "@/components/demos/demo-controls";
 import { useDemoControls } from "@/hooks/use-demo-controls";
-import { ParticleObject } from "@/lib/ParticleObject/ParticleObject";
+import { ParticleObject } from "@/components/docs/live/ParticleObject";
 
 const DEFAULT_MODEL = "/assets/models/duck.glb";
 const AUTO_COLOR = "auto";

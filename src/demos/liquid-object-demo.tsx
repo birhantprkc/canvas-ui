@@ -12,7 +12,7 @@ import {
 } from "@/components/demos/control-schema";
 import { ColorRow, DemoControls } from "@/components/demos/demo-controls";
 import { useDemoControls } from "@/hooks/use-demo-controls";
-import { LiquidObject } from "@/lib/LiquidObject/LiquidObject";
+import { LiquidObject } from "@/components/docs/live/LiquidObject";
 
 const DEFAULT_MODEL = "/assets/models/duck.glb";
 const LIGHT_BACKGROUND = "#ffffff";

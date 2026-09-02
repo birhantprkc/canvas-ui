@@ -13,7 +13,7 @@ import {
 } from "@/components/demos/control-schema";
 import { ColorRow, DemoControls } from "@/components/demos/demo-controls";
 import { useDemoControls } from "@/hooks/use-demo-controls";
-import { DitheredObject } from "@/lib/DitheredObject/DitheredObject";
+import { DitheredObject } from "@/components/docs/live/DitheredObject";
 
 const DEFAULT_MODEL = "/assets/models/duck.glb";
 const DEFAULT_HIGHLIGHT = "#066aff";

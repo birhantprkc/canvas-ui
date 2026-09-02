@@ -13,7 +13,7 @@ import {
 } from "@/components/demos/control-schema";
 import { ColorRow, DemoControls } from "@/components/demos/demo-controls";
 import { useDemoControls } from "@/hooks/use-demo-controls";
-import { GlassObject } from "@/lib/GlassObject/GlassObject";
+import { GlassObject } from "@/components/docs/live/GlassObject";
 import { DEMO_IMAGES } from "./demo-image-cycler";
 
 const DEFAULT_MODEL = "/logo-icon.svg";

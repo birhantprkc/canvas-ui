@@ -197,7 +197,7 @@ export const COMPONENTS: ComponentEntry[] = [
     href: "/docs/components/liquid",
     name: "Liquid",
     description:
-      "A pointer-driven WebGL fluid simulation that runs over your live HTML.",
+      "A pointer-driven GPU fluid simulation that runs over your live HTML.",
     video: "/assets/videos/liquid.webm",
   },
   {

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useSyncExternalStore, type ReactNode } from "react";
 
-import { ParticleReveal } from "@/lib/ParticleReveal/ParticleReveal";
+import { ParticleReveal } from "@/components/docs/live/ParticleReveal";
 import { supportsHtmlInCanvas } from "@/lib/ParticleReveal/ParticleRevealVanilla";
 
 const emptySubscribe = () => () => {};

@@ -389,7 +389,7 @@ export function DemoControls<S extends ControlSchema>({
             transition={{ duration: open ? 0.3 : 0.15, ease: EASE }}
             className="w-72 rounded-2xl border border-border/60 bg-background/85 p-3 shadow-xl shadow-black/5 backdrop-blur-xl backdrop-saturate-150"
           >
-            <div className="mb-2 flex items-center justify-between pl-1">
+                <div className="mb-2 flex items-center justify-between pl-1">
               <p className="text-[13px] font-semibold tracking-[-0.01em]">
                 {title}
               </p>

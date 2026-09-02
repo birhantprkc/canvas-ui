@@ -8,7 +8,7 @@ import { color, radio, scrub } from "@/components/demos/control-schema";
 import { DemoControls } from "@/components/demos/demo-controls";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useDemoControls } from "@/hooks/use-demo-controls";
-import { AsciiSweep } from "@/lib/AsciiSweep/AsciiSweep";
+import { AsciiSweep } from "@/components/docs/live/AsciiSweep";
 import { cn } from "@/lib/utils";
 
 export const ASCII_SWEEP_CONTROLS = {

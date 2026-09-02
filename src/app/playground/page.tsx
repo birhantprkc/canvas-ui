@@ -10,7 +10,7 @@ import { PlaygroundClient } from "@/components/playground/playground-client";
 export const metadata: Metadata = {
   title: "Playground",
   description:
-    "Try every Canvas UI component on a real landing page. Pick an effect, tune its controls, and watch it run over live HTML.",
+    "Try every Canvas UI component on a real landing page. Pick an effect, tune its controls, switch between WebGL and WebGPU, and watch it run over live HTML.",
   alternates: { canonical: "/playground" },
 };
 

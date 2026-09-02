@@ -9,7 +9,7 @@ import {
 } from "@/components/demos/demo-controls";
 import { MOCK_SITE_COPY, MockSite } from "@/components/playground/mock-site";
 import { useDemoControls } from "@/hooks/use-demo-controls";
-import { AsciiSweep } from "@/lib/AsciiSweep/AsciiSweep";
+import { AsciiSweep } from "@/components/docs/live/AsciiSweep";
 
 const CONTROLS = {
   color: color("Ink color", "#4ade80"),

@@ -55,6 +55,12 @@ const ENTRIES: SearchEntry[] = [
     section: "Getting Started",
     suggested: true,
   },
+  {
+    href: "/docs/rendering",
+    label: "Rendering",
+    section: "Getting Started",
+    hint: "webgl webgpu vgpu wgsl renderer",
+  },
   { href: "/docs/mcp", label: "MCP", section: "Getting Started" },
   {
     href: "/components",
