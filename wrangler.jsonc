@@ -8,9 +8,8 @@
     // and the request carries a valid token. Set to "false" only for local work.
     "TURNSTILE_ENABLED": "true",
     "ALLOWED_ORIGINS": "https://canvasui.dev,https://www.canvasui.dev",
-    // Contacts must live in an audience to be reachable by a Resend broadcast.
-    "RESEND_AUDIENCE_ID": "5581ebcc-ba64-4d55-a5dc-747b5777a92a"
-  },
+    "RESEND_SEGMENT_ID": "137ef7cc-e20d-4993-a193-0ffbac591a2c"
+},
   "ratelimits": [
     {
       "name": "SUBSCRIBE_IP_LIMIT",

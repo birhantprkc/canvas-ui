@@ -10,7 +10,7 @@ interface Env {
   TURNSTILE_SECRET_KEY?: string;
   TURNSTILE_ENABLED?: string;
   ALLOWED_ORIGINS?: string;
-  RESEND_AUDIENCE_ID?: string;
+  RESEND_SEGMENT_ID?: string;
   SUBSCRIBE_IP_LIMIT?: RateLimiter;
   SUBSCRIBE_GLOBAL_LIMIT?: RateLimiter;
 }
@@ -107,7 +107,7 @@ async function subscribe(request: Request, env: Env): Promise<Response> {
     return json({ error: "Expected a JSON body." }, 415);
   }
 
-  if (!env.RESEND_API_KEY) {
+  if (!env.RESEND_API_KEY || !env.RESEND_SEGMENT_ID) {
     return json({ error: UNAVAILABLE }, 503);
   }
 
@@ -186,29 +186,50 @@ async function subscribe(request: Request, env: Env): Promise<Response> {
     return json({ error: "Please use a permanent email address." }, 400);
   }
 
+  const resendHeaders = {
+    authorization: `Bearer ${env.RESEND_API_KEY}`,
+    "content-type": "application/json",
+  };
+
   let response: Response;
   try {
-    const audience = env.RESEND_AUDIENCE_ID;
-    const endpoint = audience
-      ? `https://api.resend.com/audiences/${audience}/contacts`
-      : "https://api.resend.com/contacts";
-
-    response = await fetch(endpoint, {
+    response = await fetch("https://api.resend.com/contacts", {
       method: "POST",
-      headers: {
-        authorization: `Bearer ${env.RESEND_API_KEY}`,
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ email: normalized, unsubscribed: false }),
+      headers: resendHeaders,
+      body: JSON.stringify({
+        email: normalized,
+        unsubscribed: false,
+        segments: [{ id: env.RESEND_SEGMENT_ID }],
+      }),
     });
   } catch {
     return json({ error: "Something went wrong. Please try again." }, 502);
   }
 
   if (!response.ok) {
-    if (response.status === 422) {
-      return json({ error: "Please enter a valid email address." }, 400);
+    // Contacts are global in Resend. An address may already exist in another
+    if (response.status === 409 || response.status === 422) {
+      let segmentResponse: Response;
+      try {
+        segmentResponse = await fetch(
+          `https://api.resend.com/contacts/${encodeURIComponent(normalized)}/segments/${encodeURIComponent(env.RESEND_SEGMENT_ID)}`,
+          { method: "POST", headers: resendHeaders },
+        );
+      } catch {
+        return json({ error: "Something went wrong. Please try again." }, 502);
+      }
+
+      if (segmentResponse.ok || segmentResponse.status === 409) {
+        return json({ ok: true });
+      }
+
+      if (response.status === 422) {
+        return json({ error: "Please enter a valid email address." }, 400);
+      }
+
+      return json({ error: "Something went wrong. Please try again." }, 502);
     }
+
     if (response.status === 429) {
       return json(
         { error: "Too many attempts. Please try again shortly." },

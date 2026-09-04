@@ -59,6 +59,12 @@ const config = JSON.parse(
 const turnstileRequired = config.vars?.TURNSTILE_ENABLED === "true";
 const siteKey = resolve("NEXT_PUBLIC_TURNSTILE_SITE_KEY");
 
+if (!config.vars?.RESEND_SEGMENT_ID) {
+  errors.push(
+    "RESEND_SEGMENT_ID is missing from wrangler.jsonc. Every signup must be assigned to the Canvas UI Newsletter segment.",
+  );
+}
+
 if (turnstileRequired) {
   if (!siteKey) {
     errors.push(
